@@ -1,4 +1,4 @@
-[![Build and Test](https://github.com/ImperialBower/wincounter/actions/workflows/CI.yaml/badge.svg)](https://github.com/ImperialBower/wincounter/actions/workflows/CI.yaml)
+[![Build and Test](https://github.com/ImperialBower/wincounter/actions/workflows/basic.yaml/badge.svg)](https://github.com/ImperialBower/wincounter/actions/workflows/basic.yaml)
 [![Crates.io Version](https://img.shields.io/crates/v/wincounter.svg)](https://crates.io/crates/wincounter)
 [![Rustdocs](https://docs.rs/wincounter/badge.svg)](https://docs.rs/wincounter/)
 
