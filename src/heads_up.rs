@@ -1,4 +1,4 @@
-use crate::calculate_percentage;
+use crate::util::Util;
 use serde::{Deserialize, Serialize};
 use std::fmt;
 
@@ -12,12 +12,11 @@ use std::fmt;
 /// 32116 times.
 ///
 /// ```
-/// use wincounter::result::HeadsUp;
+/// use wincounter::heads_up::HeadsUp;
 ///
 /// let the_hand = HeadsUp::new(1365284, 314904, 32116);
 /// assert_eq!("79.73% (1365284), 18.39% (314904), 1.88% (32116)", the_hand.to_string());
 /// ```
-///
 #[derive(
     Clone, Copy, Debug, Default, Eq, Hash, Ord, PartialEq, PartialOrd, Serialize, Deserialize,
 )]
@@ -39,27 +38,27 @@ impl HeadsUp {
 
     #[must_use]
     pub fn percentage_first(&self) -> f32 {
-        calculate_percentage(self.first_wins, self.total())
+        Util::calculate_percentage(self.first_wins, self.total())
     }
 
     #[must_use]
     pub fn percentage_first_cumulative(&self) -> f32 {
-        calculate_percentage(self.first_wins + self.ties, self.total())
+        Util::calculate_percentage(self.first_wins + self.ties, self.total())
     }
 
     #[must_use]
     pub fn percentage_second(&self) -> f32 {
-        calculate_percentage(self.second_wins, self.total())
+        Util::calculate_percentage(self.second_wins, self.total())
     }
 
     #[must_use]
     pub fn percentage_second_cumulative(&self) -> f32 {
-        calculate_percentage(self.second_wins + self.ties, self.total())
+        Util::calculate_percentage(self.second_wins + self.ties, self.total())
     }
 
     #[must_use]
     pub fn percentage_ties(&self) -> f32 {
-        calculate_percentage(self.ties, self.total())
+        Util::calculate_percentage(self.ties, self.total())
     }
 
     #[must_use]
@@ -91,7 +90,7 @@ impl fmt::Display for HeadsUp {
 
 #[cfg(test)]
 #[allow(non_snake_case)]
-mod tests__result {
+mod util__wincounter__heads_up__tests {
     use super::*;
 
     // "6♠ 6♥ 5♦ 5♣" -b "9♣ 6♦ 5♥ 5♠ 8♠" HSP THE hand Negreanu/Hansen
