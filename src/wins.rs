@@ -1,7 +1,7 @@
 use crate::heads_up::HeadsUp;
 use crate::util::Util;
 use crate::win::Win;
-use crate::{PlayerFlag, Result};
+use crate::{PlayerFlag, WinResult};
 
 /// I've moved wincounter into the library so that I can make updates to the library
 /// as a part of this work. The plan is to later on move the updated module back to
@@ -64,7 +64,10 @@ impl Wins {
             .into_iter()
             .filter(|r| r.win_for(result))
             .collect();
-        (wins.len(), wins.into_iter().filter(Result::is_tie).count())
+        (
+            wins.len(),
+            wins.into_iter().filter(WinResult::is_tie).count(),
+        )
     }
 
     /// Pass in a zero based player index and the function will return the

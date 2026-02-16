@@ -23,7 +23,7 @@
 //!   converting between player indices and flags
 //! - **[`wins`]** - The [`Wins`](wins::Wins) collection type for accumulating game outcomes
 //! - **[`heads_up`]** - Specialized handling for two-player games via [`HeadsUp`](heads_up::HeadsUp)
-//! - **[`results`]** - The [`Results`](results::Results) type for calculating percentages from accumulated wins
+//! - **[`results`]** - The [`WinResults`](results::WinResults) type for calculating percentages from accumulated wins
 //! - **[`util`]** - Utility functions for percentage calculations and other helpers
 //!
 //! ## Quick Start
@@ -72,19 +72,19 @@
 //!
 //! ### Example: Calculating Percentages
 //!
-//! Use [`Results`](results::Results) to compute win percentages from accumulated data:
+//! Use [`WinResults`](results::WinResults) to compute win percentages from accumulated data:
 //!
 //! ```rust
 //! use wincounter::wins::Wins;
 //! use wincounter::win::Win;
-//! use wincounter::results::Results;
+//! use wincounter::results::WinResults;
 //!
 //! let mut wins = Wins::default();
 //! wins.add_x(Win::FIRST, 80);
 //! wins.add_x(Win::SECOND, 15);
 //! wins.add_x(Win::FIRST | Win::SECOND, 5);
 //!
-//! let results = Results::from_wins(&wins, 2);
+//! let results = WinResults::from_wins(&wins, 2);
 //! let (win_pct, tie_pct) = results.wins_and_ties_percentages(0);
 //!
 //! // Player 1 wins alone 80% of the time, ties 5% of the time
@@ -127,7 +127,7 @@ pub mod wins;
 /// regret it. Just wrap it.
 pub type PlayerFlag = u16;
 
-pub trait Result {
+pub trait WinResult {
     #[must_use]
     fn is_tie(&self) -> bool;
 
@@ -135,7 +135,7 @@ pub trait Result {
     fn win_for(&self, count: PlayerFlag) -> bool;
 }
 
-impl Result for PlayerFlag {
+impl WinResult for PlayerFlag {
     fn is_tie(&self) -> bool {
         self.count_ones() > 1
     }
