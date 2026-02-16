@@ -1,6 +1,7 @@
 [![Build and Test](https://github.com/ImperialBower/wincounter/actions/workflows/basic.yaml/badge.svg)](https://github.com/ImperialBower/wincounter/actions/workflows/basic.yaml)
 [![Crates.io Version](https://img.shields.io/crates/v/wincounter.svg)](https://crates.io/crates/wincounter)
 [![Rustdocs](https://docs.rs/wincounter/badge.svg)](https://docs.rs/wincounter/)
+[![WASM](https://img.shields.io/badge/WASM-compatible-darkblue)](https://webassembly.org/)
 
 # Win Counter
 
@@ -22,8 +23,9 @@ The default `cargo make` runs the following tasks:
 * `cargo fmt`
 * `cargo clean`
 * `cargo build`
-* `carg test`
+* `cargo test`
 * `cargo clippy` with `clippy::pedantic` lint settings
+* `cargo check --target wasm32-unknown-unknown` (WASM compatibility)
 * `cargo doc --no-deps`
 
 ```shell
