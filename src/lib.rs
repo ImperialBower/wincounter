@@ -106,12 +106,19 @@
 //! - **Flexible reporting** - Calculate percentages with or without ties
 //! - **Up to 16 players** - Support for games with many participants
 //! - **Serde support** - Serialize and deserialize results
+//! - **WASM compatible** - Works in WebAssembly environments (file I/O functions excluded)
 //!
 //! ## Technical Notes
 //!
 //! The [`PlayerFlag`] type is currently a type alias for `u16`. There are plans to refactor
 //! this into a newtype wrapper (e.g., `struct PlayerFlag(u16)`) for better type safety and
 //! to enable implementing methods directly on the type.
+//!
+//! ### WASM Compatibility
+//!
+//! This crate is compatible with WebAssembly targets. When compiled for `wasm32-unknown-unknown`,
+//! the `util::Util::read_lines()` function is excluded (as it requires file system access).
+//! All other functionality works normally in WASM environments. See the `WASM.md` file for more details.
 
 #![warn(clippy::pedantic, clippy::unwrap_used, clippy::expect_used)]
 

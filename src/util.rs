@@ -1,8 +1,12 @@
 use std::borrow::Cow;
-use std::fs::File;
-use std::io::{self, BufRead};
-use std::path::Path;
 use std::str::Utf8Error;
+
+#[cfg(not(target_arch = "wasm32"))]
+use std::fs::File;
+#[cfg(not(target_arch = "wasm32"))]
+use std::io::{self, BufRead};
+#[cfg(not(target_arch = "wasm32"))]
+use std::path::Path;
 
 #[derive(Clone, Copy, Debug, Default, Eq, Hash, Ord, PartialEq, PartialOrd)]
 pub struct Percentage {
@@ -54,6 +58,9 @@ impl Util {
     /// # Errors
     ///
     /// Returns `io::Error` if the file cannot be opened or read.
+    ///
+    /// Note: This function is not available when targeting WASM.
+    #[cfg(not(target_arch = "wasm32"))]
     pub fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
     where
         P: AsRef<Path>,

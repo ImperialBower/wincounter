@@ -22,6 +22,10 @@ command = "cargo"
 args = ["test"]
 dependencies = ["clean"]
 
+[tasks.wasm]
+command = "cargo"
+args = ["check", "--target", "wasm32-unknown-unknown"]
+
 [tasks.create_docs]
 command = "cargo"
 args = ["doc", "--no-deps"]
@@ -42,6 +46,7 @@ dependencies = [
     "build",
     "test",
     "clippy",
+    "wasm",
     "create_docs"
 ]
 
