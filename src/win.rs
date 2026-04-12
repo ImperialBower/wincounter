@@ -163,4 +163,11 @@ mod util__wincounter__win__tests {
     fn or() {
         assert_eq!(0b0000_0110, Win::or(Win::SECOND, Win::THIRD));
     }
+
+    #[test]
+    fn or__overlapping_bits() {
+        // | and ^ differ when operands share set bits; this catches the | -> ^ mutant
+        let combined = Win::FIRST | Win::SECOND;
+        assert_eq!(combined, Win::or(combined, Win::SECOND));
+    }
 }

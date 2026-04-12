@@ -190,6 +190,8 @@ mod util__wincounter__results__tests {
     fn from_wins() {
         let results = WinResults::from_wins(&the_hand_as_wins(), 2);
 
+        assert_eq!(1_712_304, results.case_count);
+        assert_eq!(2, results.player_count);
         assert_eq!(&(1_365_284, 32_116), results.v.get(0).unwrap());
         assert_eq!(&(314_904, 32_116), results.v.get(1).unwrap());
     }

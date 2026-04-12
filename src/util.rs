@@ -150,4 +150,33 @@ mod util__tests {
 
         assert_eq!(Util::str_remove_spaces(index), expected);
     }
+
+    #[test]
+    fn percentage_calculate() {
+        assert_eq!(25.0_f32, Percentage::new(1, 4).calculate());
+        assert_eq!(0.0_f32, Percentage::new(0, 0).calculate());
+        assert_eq!(0.0_f32, Percentage::new(0, 100).calculate());
+    }
+
+    #[test]
+    fn percent_decode() {
+        assert_eq!("hello world", Util::percent_decode("hello%20world").unwrap());
+        assert_eq!("A♠ J♦", Util::percent_decode("A%E2%99%A0%20J%E2%99%A6").unwrap());
+        assert_eq!("", Util::percent_decode("").unwrap());
+    }
+
+    #[test]
+    fn str_splitter() {
+        assert_eq!(vec!["a", "b", "c"], Util::str_splitter("a,b,c", ","));
+        assert_eq!(vec!["hello"], Util::str_splitter("hello", ","));
+        assert_eq!(vec!["", ""], Util::str_splitter(",", ","));
+    }
+
+    #[test]
+    fn str_len_splitter() {
+        assert_eq!("AB CD EF", Util::str_len_splitter("ABCDEF", 2));
+        assert_eq!("ABC DEF", Util::str_len_splitter("ABCDEF", 3));
+        assert_eq!("ABCDEF", Util::str_len_splitter("ABCDEF", 6));
+        assert_eq!("A B C", Util::str_len_splitter("ABC", 1));
+    }
 }

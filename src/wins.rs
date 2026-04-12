@@ -209,6 +209,22 @@ mod util__wincounter__wins__tests {
     }
 
     #[test]
+    fn percentage_for_player() {
+        let mut wins = Wins::default();
+        wins.add_x(Win::FIRST, 1_365_284);
+        wins.add_x(Win::SECOND, 314_904);
+        wins.add_x(Win::FIRST | Win::SECOND, 32_116);
+
+        let (win_pct, tie_pct) = wins.percentage_for_player(0);
+        assert_eq!(79.73374_f32, win_pct);
+        assert_eq!(1.8756015_f32, tie_pct);
+
+        let (win_pct2, tie_pct2) = wins.percentage_for_player(1);
+        assert_eq!(18.39066_f32, win_pct2);
+        assert_eq!(1.8756015_f32, tie_pct2);
+    }
+
+    #[test]
     fn results_heads_up() {
         let mut counter = Wins::default();
         counter.add_x(Win::FIRST, 1_365_284);
