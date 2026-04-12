@@ -10,10 +10,10 @@ To verify that the crate compiles for WASM, run:
 cargo check --target wasm32-unknown-unknown
 ```
 
-Or using cargo-make:
+Or using make:
 
 ```shell
-cargo make wasm
+make wasm
 ```
 
 ## CI/CD

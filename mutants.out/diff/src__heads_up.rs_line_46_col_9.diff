@@ -1,0 +1,21 @@
+--- src/heads_up.rs
++++ replace HeadsUp::percentage_first_cumulative -> f32 with 0.0
+@@ -38,17 +38,17 @@
+ 
+     #[must_use]
+     pub fn percentage_first(&self) -> f32 {
+         Util::calculate_percentage(self.first_wins, self.total())
+     }
+ 
+     #[must_use]
+     pub fn percentage_first_cumulative(&self) -> f32 {
+-        Util::calculate_percentage(self.first_wins + self.ties, self.total())
++        0.0 /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     #[must_use]
+     pub fn percentage_second(&self) -> f32 {
+         Util::calculate_percentage(self.second_wins, self.total())
+     }
+ 
+     #[must_use]

@@ -50,10 +50,10 @@ All other utility functions remain available in WASM environments.
 
 ### 4. Build System Integration
 
-#### `Makefile.toml`
-- Added new `wasm` task that runs `cargo check --target wasm32-unknown-unknown`
-- Integrated `wasm` task into the default `ayce` (All You Can Eat) task
-- Now `cargo make` automatically checks WASM compatibility
+#### `Makefile`
+- Added `wasm` target that runs `cargo check --target wasm32-unknown-unknown`
+- Integrated `wasm` target into the default `ayce` (All You Can Eat) target
+- Now `make` automatically checks WASM compatibility
 
 ### 5. Testing Scripts
 
@@ -112,7 +112,7 @@ The crate automatically excludes incompatible features when compiled for WASM.
 Three ways to test WASM compatibility:
 
 1. **Cargo directly**: `cargo check --target wasm32-unknown-unknown`
-2. **Cargo Make**: `cargo make wasm`
+2. **Make**: `make wasm`
 3. **Test script**: `./test-wasm.sh`
 
 ## CI/CD Integration

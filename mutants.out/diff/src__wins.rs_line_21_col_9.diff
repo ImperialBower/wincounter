@@ -1,0 +1,23 @@
+--- src/wins.rs
++++ replace Wins::add_x with ()
+@@ -13,19 +13,17 @@
+ 
+ impl Wins {
+     pub fn add(&mut self, count: PlayerFlag) {
+         self.0.push(count);
+     }
+ 
+     /// Adds a count x number of times. Primarily used for testing.
+     pub fn add_x(&mut self, count: PlayerFlag, x: usize) {
+-        for _ in 0..x {
+-            self.0.push(count);
+-        }
++        () /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     pub fn add_win_first(&mut self) {
+         self.0.push(Win::FIRST);
+     }
+ 
+     pub fn add_win_second(&mut self) {
+         self.0.push(Win::SECOND);

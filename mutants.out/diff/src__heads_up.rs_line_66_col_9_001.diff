@@ -1,0 +1,22 @@
+--- src/heads_up.rs
++++ replace HeadsUp::percentage_total -> f32 with 1.0
+@@ -58,18 +58,17 @@
+ 
+     #[must_use]
+     pub fn percentage_ties(&self) -> f32 {
+         Util::calculate_percentage(self.ties, self.total())
+     }
+ 
+     #[must_use]
+     pub fn percentage_total(&self) -> f32 {
+-        let x = self.percentage_first() + self.percentage_second() + self.percentage_ties();
+-        (x * 100.0).round() / 100.0
++        1.0 /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     #[must_use]
+     pub fn total(&self) -> usize {
+         self.first_wins + self.second_wins + self.ties
+     }
+ }
+ 

@@ -1,0 +1,30 @@
+--- src/wins.rs
++++ replace Wins::wins_for -> (usize, usize) with (1, 1)
+@@ -53,26 +53,17 @@
+     pub fn len(&self) -> usize {
+         self.0.len()
+     }
+ 
+     /// Returns the cumulative wins for a specific `PlayerFlag`, and their number
+     /// of ties.
+     #[must_use]
+     pub fn wins_for(&self, result: PlayerFlag) -> (usize, usize) {
+-        let wins: Vec<PlayerFlag> = self
+-            .0
+-            .clone()
+-            .into_iter()
+-            .filter(|r| r.win_for(result))
+-            .collect();
+-        (
+-            wins.len(),
+-            wins.into_iter().filter(WinResult::is_tie).count(),
+-        )
++        (1, 1) /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     /// Pass in a zero based player index and the function will return the
+     /// win alone percentage of the player, as well as the number of times
+     /// the player tied for first.
+     #[must_use]
+     pub fn percentage_for_player(&self, index: usize) -> (f32, f32) {
+         let total = self.len();

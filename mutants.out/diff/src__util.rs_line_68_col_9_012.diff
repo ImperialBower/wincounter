@@ -1,0 +1,22 @@
+--- src/util.rs
++++ replace Util::read_lines -> io::Result<io::Lines<io::BufReader<File>>> with Ok(Lines::from(BufReader::from(Default::default())))
+@@ -60,18 +60,17 @@
+     /// Returns `io::Error` if the file cannot be opened or read.
+     ///
+     /// Note: This function is not available when targeting WASM.
+     #[cfg(not(target_arch = "wasm32"))]
+     pub fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
+     where
+         P: AsRef<Path>,
+     {
+-        let file = File::open(filename)?;
+-        Ok(io::BufReader::new(file).lines())
++        Ok(Lines::from(BufReader::from(Default::default()))) /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     /// I need to study the ideas behind `Cow`.
+     ///
+     /// Usage:
+     /// ```
+     /// use wincounter::util::Util;
+     /// assert_eq!(Util::replace_plus("A♠+J♦+6♥+6♣".into()), "A♠ J♦ 6♥ 6♣");

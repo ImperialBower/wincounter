@@ -1,0 +1,21 @@
+--- src/win.rs
++++ delete match arm 13 in Win::from_index
+@@ -109,17 +109,17 @@
+             5 => Win::SIXTH,
+             6 => Win::SEVENTH,
+             7 => Win::EIGHT,
+             8 => Win::NINTH,
+             9 => Win::TENTH,
+             10 => Win::ELEVENTH,
+             11 => Win::TWELFTH,
+             12 => Win::THIRTEENTH,
+-            13 => Win::FOURTEENTH,
++             /* ~ changed by cargo-mutants ~ */
+             14 => Win::FIFTEENTH,
+             15 => Win::SIXTEENTH,
+             _ => PlayerFlag::default(),
+         }
+     }
+ 
+     /// This is probably a needless function, and a pair partner stronger than the voice in my head
+     /// would probably just tell me to do a simple OR operation. The truth is, that I have to

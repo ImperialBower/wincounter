@@ -1,0 +1,132 @@
+src/lib.rs:147:9: replace <impl WinResult for PlayerFlag>::is_tie -> bool with true
+src/lib.rs:147:9: replace <impl WinResult for PlayerFlag>::is_tie -> bool with false
+src/lib.rs:147:27: replace > with == in <impl WinResult for PlayerFlag>::is_tie
+src/lib.rs:147:27: replace > with < in <impl WinResult for PlayerFlag>::is_tie
+src/lib.rs:147:27: replace > with >= in <impl WinResult for PlayerFlag>::is_tie
+src/lib.rs:151:9: replace <impl WinResult for PlayerFlag>::win_for -> bool with true
+src/lib.rs:151:9: replace <impl WinResult for PlayerFlag>::win_for -> bool with false
+src/lib.rs:151:22: replace == with != in <impl WinResult for PlayerFlag>::win_for
+src/lib.rs:151:14: replace & with | in <impl WinResult for PlayerFlag>::win_for
+src/lib.rs:151:14: replace & with ^ in <impl WinResult for PlayerFlag>::win_for
+src/heads_up.rs:41:9: replace HeadsUp::percentage_first -> f32 with 0.0
+src/heads_up.rs:41:9: replace HeadsUp::percentage_first -> f32 with 1.0
+src/heads_up.rs:41:9: replace HeadsUp::percentage_first -> f32 with -1.0
+src/heads_up.rs:46:9: replace HeadsUp::percentage_first_cumulative -> f32 with 0.0
+src/heads_up.rs:46:9: replace HeadsUp::percentage_first_cumulative -> f32 with 1.0
+src/heads_up.rs:46:9: replace HeadsUp::percentage_first_cumulative -> f32 with -1.0
+src/heads_up.rs:46:52: replace + with - in HeadsUp::percentage_first_cumulative
+src/heads_up.rs:46:52: replace + with * in HeadsUp::percentage_first_cumulative
+src/heads_up.rs:51:9: replace HeadsUp::percentage_second -> f32 with 0.0
+src/heads_up.rs:51:9: replace HeadsUp::percentage_second -> f32 with 1.0
+src/heads_up.rs:51:9: replace HeadsUp::percentage_second -> f32 with -1.0
+src/heads_up.rs:56:9: replace HeadsUp::percentage_second_cumulative -> f32 with 0.0
+src/heads_up.rs:56:9: replace HeadsUp::percentage_second_cumulative -> f32 with 1.0
+src/heads_up.rs:56:9: replace HeadsUp::percentage_second_cumulative -> f32 with -1.0
+src/heads_up.rs:56:53: replace + with - in HeadsUp::percentage_second_cumulative
+src/heads_up.rs:56:53: replace + with * in HeadsUp::percentage_second_cumulative
+src/heads_up.rs:61:9: replace HeadsUp::percentage_ties -> f32 with 0.0
+src/heads_up.rs:61:9: replace HeadsUp::percentage_ties -> f32 with 1.0
+src/heads_up.rs:61:9: replace HeadsUp::percentage_ties -> f32 with -1.0
+src/heads_up.rs:66:9: replace HeadsUp::percentage_total -> f32 with 0.0
+src/heads_up.rs:66:9: replace HeadsUp::percentage_total -> f32 with 1.0
+src/heads_up.rs:66:9: replace HeadsUp::percentage_total -> f32 with -1.0
+src/heads_up.rs:66:68: replace + with - in HeadsUp::percentage_total
+src/heads_up.rs:66:68: replace + with * in HeadsUp::percentage_total
+src/heads_up.rs:66:41: replace + with - in HeadsUp::percentage_total
+src/heads_up.rs:66:41: replace + with * in HeadsUp::percentage_total
+src/heads_up.rs:67:29: replace / with % in HeadsUp::percentage_total
+src/heads_up.rs:67:29: replace / with * in HeadsUp::percentage_total
+src/heads_up.rs:67:12: replace * with + in HeadsUp::percentage_total
+src/heads_up.rs:67:12: replace * with / in HeadsUp::percentage_total
+src/heads_up.rs:72:9: replace HeadsUp::total -> usize with 0
+src/heads_up.rs:72:9: replace HeadsUp::total -> usize with 1
+src/heads_up.rs:72:44: replace + with - in HeadsUp::total
+src/heads_up.rs:72:44: replace + with * in HeadsUp::total
+src/heads_up.rs:72:25: replace + with - in HeadsUp::total
+src/heads_up.rs:72:25: replace + with * in HeadsUp::total
+src/heads_up.rs:78:9: replace <impl fmt::Display for HeadsUp>::fmt -> fmt::Result with Ok(Default::default())
+src/results.rs:97:9: replace WinResults::from_wins -> WinResults with Default::default()
+src/results.rs:98:13: delete field case_count from struct Self expression in WinResults::from_wins
+src/results.rs:105:40: replace - with + in WinResults::from_wins
+src/results.rs:105:40: replace - with / in WinResults::from_wins
+src/results.rs:120:9: replace WinResults::player_to_string -> String with String::new()
+src/results.rs:120:9: replace WinResults::player_to_string -> String with "xyzzy".into()
+src/results.rs:122:41: replace + with - in WinResults::player_to_string
+src/results.rs:122:41: replace + with * in WinResults::player_to_string
+src/results.rs:123:23: replace == with != in WinResults::player_to_string
+src/results.rs:132:9: replace WinResults::wins_and_ties -> (usize, usize) with (0, 0)
+src/results.rs:132:9: replace WinResults::wins_and_ties -> (usize, usize) with (0, 1)
+src/results.rs:132:9: replace WinResults::wins_and_ties -> (usize, usize) with (1, 0)
+src/results.rs:132:9: replace WinResults::wins_and_ties -> (usize, usize) with (1, 1)
+src/results.rs:140:9: replace WinResults::wins_and_ties_percentages -> (f32, f32) with (0.0, 0.0)
+src/results.rs:140:9: replace WinResults::wins_and_ties_percentages -> (f32, f32) with (0.0, 1.0)
+src/results.rs:140:9: replace WinResults::wins_and_ties_percentages -> (f32, f32) with (0.0, -1.0)
+src/results.rs:140:9: replace WinResults::wins_and_ties_percentages -> (f32, f32) with (1.0, 0.0)
+src/results.rs:140:9: replace WinResults::wins_and_ties_percentages -> (f32, f32) with (1.0, 1.0)
+src/results.rs:140:9: replace WinResults::wins_and_ties_percentages -> (f32, f32) with (1.0, -1.0)
+src/results.rs:140:9: replace WinResults::wins_and_ties_percentages -> (f32, f32) with (-1.0, 0.0)
+src/results.rs:140:9: replace WinResults::wins_and_ties_percentages -> (f32, f32) with (-1.0, 1.0)
+src/results.rs:140:9: replace WinResults::wins_and_ties_percentages -> (f32, f32) with (-1.0, -1.0)
+src/results.rs:149:9: replace WinResults::wins_total -> usize with 0
+src/results.rs:149:9: replace WinResults::wins_total -> usize with 1
+src/results.rs:150:14: replace + with - in WinResults::wins_total
+src/results.rs:150:14: replace + with * in WinResults::wins_total
+src/results.rs:155:9: replace WinResults::wins_total_percentage -> f32 with 0.0
+src/results.rs:155:9: replace WinResults::wins_total_percentage -> f32 with 1.0
+src/results.rs:155:9: replace WinResults::wins_total_percentage -> f32 with -1.0
+src/results.rs:156:41: replace + with - in WinResults::wins_total_percentage
+src/results.rs:156:41: replace + with * in WinResults::wins_total_percentage
+src/results.rs:167:9: replace <impl Display for WinResults>::fmt -> std::fmt::Result with Ok(Default::default())
+src/util.rs:41:9: replace Util::calculate_percentage -> f32 with 0.0
+src/util.rs:41:9: replace Util::calculate_percentage -> f32 with 1.0
+src/util.rs:41:9: replace Util::calculate_percentage -> f32 with -1.0
+src/util.rs:42:13: delete match arm 0 in Util::calculate_percentage
+src/util.rs:43:42: replace / with % in Util::calculate_percentage
+src/util.rs:43:42: replace / with * in Util::calculate_percentage
+src/util.rs:43:33: replace * with + in Util::calculate_percentage
+src/util.rs:43:33: replace * with / in Util::calculate_percentage
+src/util.rs:82:9: replace Util::replace_plus -> String with String::new()
+src/util.rs:82:9: replace Util::replace_plus -> String with "xyzzy".into()
+src/util.rs:87:9: replace Util::str_remove_spaces -> String with String::new()
+src/util.rs:87:9: replace Util::str_remove_spaces -> String with "xyzzy".into()
+src/win.rs:103:9: replace Win::from_index -> PlayerFlag with Default::default()
+src/win.rs:104:13: delete match arm 0 in Win::from_index
+src/win.rs:105:13: delete match arm 1 in Win::from_index
+src/win.rs:106:13: delete match arm 2 in Win::from_index
+src/win.rs:107:13: delete match arm 3 in Win::from_index
+src/win.rs:108:13: delete match arm 4 in Win::from_index
+src/win.rs:109:13: delete match arm 5 in Win::from_index
+src/win.rs:110:13: delete match arm 6 in Win::from_index
+src/win.rs:111:13: delete match arm 7 in Win::from_index
+src/win.rs:112:13: delete match arm 8 in Win::from_index
+src/win.rs:113:13: delete match arm 9 in Win::from_index
+src/win.rs:114:13: delete match arm 10 in Win::from_index
+src/win.rs:115:13: delete match arm 11 in Win::from_index
+src/win.rs:116:13: delete match arm 12 in Win::from_index
+src/win.rs:117:13: delete match arm 13 in Win::from_index
+src/win.rs:118:13: delete match arm 14 in Win::from_index
+src/win.rs:119:13: delete match arm 15 in Win::from_index
+src/win.rs:132:9: replace Win::or -> PlayerFlag with Default::default()
+src/win.rs:132:11: replace | with & in Win::or
+src/wins.rs:16:9: replace Wins::add with ()
+src/wins.rs:21:9: replace Wins::add_x with ()
+src/wins.rs:27:9: replace Wins::add_win_first with ()
+src/wins.rs:31:9: replace Wins::add_win_second with ()
+src/wins.rs:35:9: replace Wins::add_win_third with ()
+src/wins.rs:39:9: replace Wins::extend with ()
+src/wins.rs:44:9: replace Wins::get -> &Vec<PlayerFlag> with Box::leak(Box::new(vec![]))
+src/wins.rs:44:9: replace Wins::get -> &Vec<PlayerFlag> with Box::leak(Box::new(vec![Default::default()]))
+src/wins.rs:49:9: replace Wins::is_empty -> bool with true
+src/wins.rs:49:9: replace Wins::is_empty -> bool with false
+src/wins.rs:54:9: replace Wins::len -> usize with 0
+src/wins.rs:54:9: replace Wins::len -> usize with 1
+src/wins.rs:61:9: replace Wins::wins_for -> (usize, usize) with (0, 0)
+src/wins.rs:61:9: replace Wins::wins_for -> (usize, usize) with (0, 1)
+src/wins.rs:61:9: replace Wins::wins_for -> (usize, usize) with (1, 0)
+src/wins.rs:61:9: replace Wins::wins_for -> (usize, usize) with (1, 1)
+src/wins.rs:103:9: replace Wins::results_heads_up -> HeadsUp with Default::default()
+src/wins.rs:105:28: replace - with + in Wins::results_heads_up
+src/wins.rs:105:28: replace - with / in Wins::results_heads_up
+src/wins.rs:105:43: replace - with + in Wins::results_heads_up
+src/wins.rs:105:43: replace - with / in Wins::results_heads_up
+src/wins.rs:111:9: replace <impl From<Vec<PlayerFlag>> for Wins>::from -> Self with Default::default()

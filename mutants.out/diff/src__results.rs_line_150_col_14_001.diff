@@ -1,0 +1,21 @@
+--- src/results.rs
++++ replace + with * in WinResults::wins_total
+@@ -142,17 +142,17 @@
+             Util::calculate_percentage(wins, self.case_count),
+             Util::calculate_percentage(ties, self.case_count),
+         )
+     }
+ 
+     #[must_use]
+     pub fn wins_total(&self, player_index: usize) -> usize {
+         let (wins, ties) = self.wins_and_ties(player_index);
+-        wins + ties
++        wins * /* ~ changed by cargo-mutants ~ */ ties
+     }
+ 
+     #[must_use]
+     pub fn wins_total_percentage(&self, player_index: usize) -> f32 {
+         let (wins, ties) = self.wins_and_ties(player_index);
+         Util::calculate_percentage(wins + ties, self.case_count)
+     }
+ }

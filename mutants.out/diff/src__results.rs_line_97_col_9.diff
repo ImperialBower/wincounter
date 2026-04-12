@@ -1,0 +1,32 @@
+--- src/results.rs
++++ replace WinResults::from_wins -> WinResults with Default::default()
+@@ -89,28 +89,17 @@
+     ///         ..Default::default()
+     ///     };
+     ///     // ...
+     ///     results
+     /// }
+     /// ```
+     #[must_use]
+     pub fn from_wins(wins: &Wins, player_count: usize) -> WinResults {
+-        let mut results = Self {
+-            case_count: wins.len(),
+-            player_count,
+-            ..Default::default()
+-        };
+-
+-        for i in 0..player_count {
+-            let (total_wins, ties) = wins.wins_for(Win::from_index(i));
+-            results.v.push((total_wins - ties, ties));
+-        }
+-
+-        results
++        Default::default() /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     /// This function is there to make it easy to create text based displays of a player's chances
+     /// of winning at a particular point. It will be the foundation of the `Results` display trait
+     /// implementation.
+     ///
+     /// REFACTORING: I refactored this so that it would be easier to compare my results
+     /// to what I am getting from `Fudd`, which shows a simple one decimal place win percentage:

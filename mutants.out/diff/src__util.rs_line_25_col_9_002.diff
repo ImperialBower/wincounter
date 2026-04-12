@@ -1,0 +1,21 @@
+--- src/util.rs
++++ replace Percentage::calculate -> f32 with -1.0
+@@ -17,17 +17,17 @@
+ impl Percentage {
+     #[must_use]
+     pub fn new(number: usize, total: usize) -> Self {
+         Self { number, total }
+     }
+ 
+     #[must_use]
+     pub fn calculate(&self) -> f32 {
+-        Util::calculate_percentage(self.number, self.total)
++        -1.0 /* ~ changed by cargo-mutants ~ */
+     }
+ }
+ 
+ /// Blank struct that is home to misfit utility functions.
+ ///
+ /// There is a whole school that argues against util functions and modules like
+ /// this. Obviously, I am not one of them.
+ pub struct Util;

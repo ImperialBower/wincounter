@@ -1,0 +1,21 @@
+--- src/util.rs
++++ replace * with / in Util::calculate_percentage
+@@ -35,17 +35,17 @@
+ impl Util {
+     /// Forgiving percentage calculator. It will return zero if you try
+     /// to divide by zero.
+     #[must_use]
+     #[allow(clippy::cast_precision_loss)]
+     pub fn calculate_percentage(number: usize, total: usize) -> f32 {
+         match total {
+             0 => 0_f32,
+-            _ => (number as f32 * 100.0) / total as f32,
++            _ => (number as f32 / /* ~ changed by cargo-mutants ~ */ 100.0) / total as f32,
+         }
+     }
+ 
+     ///
+     ///
+     /// # Errors
+     ///
+     /// Returns `Utf8Error` if the `&str` is not valid UTF-8.

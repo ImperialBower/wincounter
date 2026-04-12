@@ -1,0 +1,21 @@
+--- src/wins.rs
++++ replace Wins::len -> usize with 1
+@@ -46,17 +46,17 @@
+ 
+     #[must_use]
+     pub fn is_empty(&self) -> bool {
+         self.0.is_empty()
+     }
+ 
+     #[must_use]
+     pub fn len(&self) -> usize {
+-        self.0.len()
++        1 /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     /// Returns the cumulative wins for a specific `PlayerFlag`, and their number
+     /// of ties.
+     #[must_use]
+     pub fn wins_for(&self, result: PlayerFlag) -> (usize, usize) {
+         let wins: Vec<PlayerFlag> = self
+             .0

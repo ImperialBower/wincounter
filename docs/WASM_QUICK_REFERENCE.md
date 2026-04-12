@@ -18,8 +18,8 @@
 # Quick check
 cargo check --target wasm32-unknown-unknown
 
-# Using cargo-make
-cargo make wasm
+# Using make
+make wasm
 
 # Full build + test script
 bin/checkwasm

@@ -12,28 +12,23 @@ players?_
 
 ## Setup
 
-This program uses [cargo make](https://github.com/sagiegurari/cargo-make) to manage tasks. Install it with:
-
-```shell
-cargo install cargo-make
-```
-
-The default `cargo make` runs the following tasks:
+The default `make` runs the following tasks:
 
 * `cargo fmt`
 * `cargo clean`
 * `cargo build`
-* `cargo test`
+* `cargo nextest run` (unit tests)
+* `cargo test --doc` (doc tests)
 * `cargo clippy` with `clippy::pedantic` lint settings
 * `cargo check --target wasm32-unknown-unknown` (WASM compatibility)
 * `cargo doc --no-deps`
 
 ```shell
-❯ cargo make
-````
+❯ make
+```
 
 To open the generated docs in your browser:
 
 ```shell
-❯ cargo make docs
+❯ make docs
 ```

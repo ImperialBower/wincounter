@@ -1,0 +1,15 @@
+--- src/lib.rs
++++ replace == with != in <impl WinResult for PlayerFlag>::win_for
+@@ -143,11 +143,11 @@
+ }
+ 
+ impl WinResult for PlayerFlag {
+     fn is_tie(&self) -> bool {
+         self.count_ones() > 1
+     }
+ 
+     fn win_for(&self, count: PlayerFlag) -> bool {
+-        self & count == count
++        self & count != /* ~ changed by cargo-mutants ~ */ count
+     }
+ }

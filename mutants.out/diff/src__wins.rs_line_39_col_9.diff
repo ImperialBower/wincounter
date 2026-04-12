@@ -1,0 +1,21 @@
+--- src/wins.rs
++++ replace Wins::extend with ()
+@@ -31,17 +31,17 @@
+         self.0.push(Win::SECOND);
+     }
+ 
+     pub fn add_win_third(&mut self) {
+         self.0.push(Win::THIRD);
+     }
+ 
+     pub fn extend(&mut self, other: &Wins) {
+-        self.0.extend(other.get());
++        () /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     #[must_use]
+     pub fn get(&self) -> &Vec<PlayerFlag> {
+         &self.0
+     }
+ 
+     #[must_use]

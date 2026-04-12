@@ -1,0 +1,28 @@
+--- src/wins.rs
++++ replace Wins::percentage_for_player -> (f32, f32) with (0.0, -1.0)
+@@ -70,24 +70,17 @@
+         )
+     }
+ 
+     /// Pass in a zero based player index and the function will return the
+     /// win alone percentage of the player, as well as the number of times
+     /// the player tied for first.
+     #[must_use]
+     pub fn percentage_for_player(&self, index: usize) -> (f32, f32) {
+-        let total = self.len();
+-        let (wins, ties) = self.wins_for(Win::from_index(index));
+-        let pure_wins = wins - ties;
+-
+-        (
+-            Util::calculate_percentage(pure_wins, total),
+-            Util::calculate_percentage(ties, total),
+-        )
++        (0.0, -1.0) /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     /// Forgiving percentage calculator. It will return zero if you try
+     /// to divide by zero.
+     /// ```txt
+     /// #[must_use]
+     /// #[allow(clippy::cast_precision_loss)]
+     /// pub fn percent_calculator(number: usize, total: usize) -> f32 {

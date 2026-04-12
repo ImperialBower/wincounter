@@ -1,0 +1,23 @@
+--- src/wins.rs
++++ replace Wins::results_heads_up -> HeadsUp with Default::default()
+@@ -95,19 +95,17 @@
+     ///         0 => 0_f32,
+     ///         _ => ((number as f32 * 100.0) / total as f32) as f32,
+     ///     }
+     /// }
+     /// ```
+     ///
+     #[must_use]
+     pub fn results_heads_up(&self) -> HeadsUp {
+-        let (first, ties) = self.wins_for(Win::FIRST);
+-        let (second, _) = self.wins_for(Win::SECOND);
+-        HeadsUp::new(first - ties, second - ties, ties)
++        Default::default() /* ~ changed by cargo-mutants ~ */
+     }
+ }
+ 
+ impl From<Vec<PlayerFlag>> for Wins {
+     fn from(counts: Vec<PlayerFlag>) -> Self {
+         Wins(counts)
+     }
+ }

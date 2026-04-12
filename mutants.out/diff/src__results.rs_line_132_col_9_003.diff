@@ -1,0 +1,24 @@
+--- src/results.rs
++++ replace WinResults::wins_and_ties -> (usize, usize) with (1, 1)
+@@ -124,20 +124,17 @@
+             "0.00%".to_string()
+         } else {
+             format!("{percentage:.1}% ({win_percentage:.2}%/{tie_percentage:.2}%) [{wins}/{ties}]")
+         }
+     }
+ 
+     #[must_use]
+     pub fn wins_and_ties(&self, player_index: usize) -> (usize, usize) {
+-        match self.v.get(player_index) {
+-            None => (0, 0),
+-            Some((wins, ties)) => (*wins, *ties),
+-        }
++        (1, 1) /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     #[must_use]
+     pub fn wins_and_ties_percentages(&self, player_index: usize) -> (f32, f32) {
+         let (wins, ties) = self.wins_and_ties(player_index);
+         (
+             Util::calculate_percentage(wins, self.case_count),
+             Util::calculate_percentage(ties, self.case_count),

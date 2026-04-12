@@ -1,0 +1,21 @@
+--- src/win.rs
++++ delete match arm 8 in Win::from_index
+@@ -104,17 +104,17 @@
+             0 => Win::FIRST,
+             1 => Win::SECOND,
+             2 => Win::THIRD,
+             3 => Win::FORTH,
+             4 => Win::FIFTH,
+             5 => Win::SIXTH,
+             6 => Win::SEVENTH,
+             7 => Win::EIGHT,
+-            8 => Win::NINTH,
++             /* ~ changed by cargo-mutants ~ */
+             9 => Win::TENTH,
+             10 => Win::ELEVENTH,
+             11 => Win::TWELFTH,
+             12 => Win::THIRTEENTH,
+             13 => Win::FOURTEENTH,
+             14 => Win::FIFTEENTH,
+             15 => Win::SIXTEENTH,
+             _ => PlayerFlag::default(),

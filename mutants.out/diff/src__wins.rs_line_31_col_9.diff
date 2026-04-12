@@ -1,0 +1,21 @@
+--- src/wins.rs
++++ replace Wins::add_win_second with ()
+@@ -23,17 +23,17 @@
+         }
+     }
+ 
+     pub fn add_win_first(&mut self) {
+         self.0.push(Win::FIRST);
+     }
+ 
+     pub fn add_win_second(&mut self) {
+-        self.0.push(Win::SECOND);
++        () /* ~ changed by cargo-mutants ~ */
+     }
+ 
+     pub fn add_win_third(&mut self) {
+         self.0.push(Win::THIRD);
+     }
+ 
+     pub fn extend(&mut self, other: &Wins) {
+         self.0.extend(other.get());
