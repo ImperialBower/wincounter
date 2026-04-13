@@ -160,8 +160,14 @@ mod util__tests {
 
     #[test]
     fn percent_decode() {
-        assert_eq!("hello world", Util::percent_decode("hello%20world").unwrap());
-        assert_eq!("A♠ J♦", Util::percent_decode("A%E2%99%A0%20J%E2%99%A6").unwrap());
+        assert_eq!(
+            "hello world",
+            Util::percent_decode("hello%20world").unwrap()
+        );
+        assert_eq!(
+            "A♠ J♦",
+            Util::percent_decode("A%E2%99%A0%20J%E2%99%A6").unwrap()
+        );
         assert_eq!("", Util::percent_decode("").unwrap());
     }
 
